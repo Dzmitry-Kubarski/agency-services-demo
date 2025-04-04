@@ -1,0 +1,17 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+
+    svg {
+        width: 100%;
+        height: auto;
+
+        path {
+            stroke: var(--white);
+        }
+    }
+}

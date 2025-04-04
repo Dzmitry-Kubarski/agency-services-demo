@@ -1,0 +1,48 @@
+.mainNavbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    height: 100%;
+    padding: 20px 6px;
+    background-color: var(--black-primary);
+    color: var(--white);
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s linear;
+
+    &[data-active='Y'] {
+        background: rgb(255 255 255 / 20%);
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    background-color: rgb(255 255 255 / 20%);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}

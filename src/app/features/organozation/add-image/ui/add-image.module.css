@@ -1,0 +1,54 @@
+.btn {
+    font-size: 11px;
+
+    svg {
+        path {
+            stroke: var(--black-primary);
+        }
+    }
+}
+
+.preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 144px;
+    height: 108px;
+    margin: 16px auto;
+    border: 1px solid rgb(0 0 0 / 12%);
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.dialogContent {
+    width: 100%;
+    max-width: 360px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px 0 rgb(0 0 0 / 12%);
+
+    & > button {
+        display: none;
+    }
+}
+
+.dialogHeader {
+    text-align: center;
+}
+
+.dialogFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        width: 100%;
+        max-width: 49%;
+    }
+}

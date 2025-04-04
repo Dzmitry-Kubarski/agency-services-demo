@@ -1,0 +1,53 @@
+.card {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 3px 8px 0 rgb(0 0 0 / 12%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: var(--black-secondary);
+}
+
+.btn {
+    font-size: 11px;
+}
+
+.btnIcon {
+    margin-right: 4px;
+
+    path {
+        stroke: var(--black-secondary);
+    }
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.imageWrap {
+    position: relative;
+    width: 144px;
+    height: 108px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.action {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}

@@ -1,0 +1,24 @@
+.section {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: 0 3px 8px 0 rgb(0 0 0 / 12%);
+}
+
+.icon {
+    transform: rotate(180deg);
+
+    path {
+        stroke: var(--black-primary);
+    }
+}
