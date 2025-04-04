@@ -1,1 +1,1 @@
-Конфигурация приложения на react + ts, используя vite.
+Agency-services-demo
