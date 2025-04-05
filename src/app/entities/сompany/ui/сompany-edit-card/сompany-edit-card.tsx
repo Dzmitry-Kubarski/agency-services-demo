@@ -1,10 +1,7 @@
-import { useRef, useState } from 'react'
-import { toast } from 'react-toastify'
-
+import { BUSINESS_ENTITY, COMPANY_TYPE_SELECT, useCompanyEdit } from './use-сompany-edit'
 import classes from './сompany-edit-card.module.css'
 
-import { ICompany, ICompanyDTO, IContract, IContractDTO } from '@/shared/api/companies'
-import { companiesApi } from '@/shared/api/companies/companies.api'
+import { ICompany } from '@/shared/api/companies'
 import Check from '@/shared/assests/icons/check.svg?react'
 import Cancel from '@/shared/assests/icons/close.svg?react'
 
@@ -14,69 +11,13 @@ import MultiSelect from '@/shared/ui/multi-select'
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select'
 
-const BUSINESS_ENTITY = ['Sole Proprietorship', 'Partnership', 'Limited Liability Company']
-
-const COMPANY_TYPE_SELECT = [
-    { value: 'funeral_home', label: 'Funeral Home' },
-    { value: 'logistics_services', label: 'Logistics services' },
-    { value: 'burial_care_contractor', label: 'Burial care Contractor' }
-]
-
 interface Iprops {
     company: ICompany
     toggleIsEdit: () => void
 }
 
 export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
-    const [form, setForm] = useState({
-        contract: { no: company.contract.no, issue_date: company.contract.issue_date.split('T')[0] },
-        businessEntity: company.businessEntity,
-        type: company.type
-    })
-
-    const inputRef = useRef<HTMLInputElement>(null)
-
-    const handleClick = () => {
-        if (inputRef.current) {
-            inputRef.current.showPicker()
-        }
-    }
-
-    const handleChange = (field: keyof ICompanyDTO | `contract.${keyof IContractDTO}`, value: unknown) => {
-        setForm((prev) => {
-            if (typeof field === 'string' && field.startsWith('contract.')) {
-                const contractField = field.split('.')[1] as keyof IContractDTO
-
-                return {
-                    ...prev,
-                    contract: {
-                        ...(prev.contract || {}),
-                        [contractField]: value
-                    } as IContract
-                }
-            }
-
-            return {
-                ...prev,
-                [field]: value
-            }
-        })
-    }
-
-    const { mutateAsync, isPending } = companiesApi.update.useMutation()
-
-    const handlerUpdate = async () => {
-        await mutateAsync({
-            id: company.id,
-            data: {
-                ...form,
-                contract: { ...form.contract, issue_date: new Date(form.contract?.issue_date || new Date()) }
-            }
-        })
-
-        toast.success('Editing is successful')
-        toggleIsEdit()
-    }
+    const { form, inputRef, isPendingUpdate, onShowPicker, onFormChange, handlerUpdate } = useCompanyEdit({ company, toggleIsEdit })
 
     return (
         <div className={classes.card}>
@@ -86,7 +27,7 @@ export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
                 <div className={classes.buttons}>
                     <Button variant={'outline'} className={classes.btn} onClick={handlerUpdate}>
                         <Check className={classes.btnIcon} />
-                        {!isPending ? 'Save changes' : 'Loading...'}
+                        {!isPendingUpdate ? 'Save changes' : 'Loading...'}
                     </Button>
 
                     <Button variant={'outline'} className={classes.btn} onClick={toggleIsEdit}>
@@ -101,7 +42,7 @@ export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
                     <span className={classes.rowLabel}>Agreement number:</span>
 
                     <div className={classes.fields}>
-                        <Input value={form.contract?.no} onChange={(e) => handleChange('contract.no', e.currentTarget.value)} />
+                        <Input value={form.contract?.no} onChange={(e) => onFormChange('contract.no', e.currentTarget.value)} />
 
                         <div className={classes.date}>
                             <span>Date:</span>
@@ -109,9 +50,9 @@ export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
                             <Input
                                 ref={inputRef}
                                 type='date'
-                                onClick={handleClick}
+                                onClick={onShowPicker}
                                 value={form.contract?.issue_date}
-                                onChange={(e) => handleChange('contract.issue_date', e.currentTarget.value)}
+                                onChange={(e) => onFormChange('contract.issue_date', e.currentTarget.value)}
                             />
                         </div>
                     </div>
@@ -120,7 +61,7 @@ export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
                 <div className={classes.row}>
                     <span className={classes.rowLabel}>Business entity:</span>
 
-                    <Select value={form.businessEntity} onValueChange={(value) => handleChange('businessEntity', value)}>
+                    <Select value={form.businessEntity} onValueChange={(value) => onFormChange('businessEntity', value)}>
                         <SelectTrigger className={classes.selectTrigger}>
                             <SelectValue />
                         </SelectTrigger>
@@ -144,7 +85,7 @@ export const CompanyEditCard = ({ company, toggleIsEdit }: Iprops) => {
                         <MultiSelect
                             options={COMPANY_TYPE_SELECT}
                             selectedValues={form.type || []}
-                            setSelectedValues={(value) => handleChange('type', value)}
+                            setSelectedValues={(value) => onFormChange('type', value)}
                             placeholder='Select company type...'
                         />
                     </div>
