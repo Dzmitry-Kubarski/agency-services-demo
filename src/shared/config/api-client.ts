@@ -2,7 +2,7 @@ import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } f
 
 import { ROUTES } from '../routes'
 
-const BASE_API_URL = `${globalConfig.API_ENDPOINT}`
+export const BASE_API_URL = `${globalConfig.API_ENDPOINT}`
 
 import { HTTPClientError } from './errors'
 import { globalConfig } from './global-config'

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
+import { BASE_API_URL } from '@/shared/config/api-client'
 import { logger } from '@/shared/lib/logger'
 import { ROUTES } from '@/shared/routes'
 import { Button } from '@/shared/ui/button'
@@ -10,7 +11,7 @@ export const Login = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('https://test-task-api.allfuneral.com/auth?user=USERNAME')
+            const response = await fetch(`${BASE_API_URL}/auth?user=USERNAME`)
             const token = response.headers.get('authorization')
 
             if (token) {
