@@ -4,7 +4,12 @@ import { toast } from 'react-toastify'
 
 import classes from './delete-organozation.module.css'
 
-import { Button } from '@/components/ui/button'
+import { companiesApi } from '@/shared/api/companies/companies.api'
+import Trash from '@/shared/assests/icons/trash.svg?react'
+
+import { ROUTES } from '@/shared/routes'
+
+import { Button } from '@/shared/ui/button'
 
 import {
     Dialog,
@@ -15,12 +20,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from '@/components/ui/dialog'
-
-import { companiesApi } from '@/shared/api/companies/companies.api'
-import Trash from '@/shared/assests/icons/trash.svg?react'
-
-import { ROUTES } from '@/shared/routes'
+} from '@/shared/ui/dialog'
 
 interface IProps {
     organizationId: string

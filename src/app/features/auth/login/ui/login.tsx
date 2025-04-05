@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-import { Button } from '@/components/ui/button'
 import { logger } from '@/shared/lib/logger'
 import { ROUTES } from '@/shared/routes'
+import { Button } from '@/shared/ui/button'
 
 export const Login = () => {
     const navigate = useNavigate()

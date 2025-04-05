@@ -3,12 +3,12 @@ import { toast } from 'react-toastify'
 
 import classes from './add-image.module.css'
 
-import { Button } from '@/components/ui/button'
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-
-import { Input } from '@/components/ui/input'
 import { companiesApi } from '@/shared/api/companies/companies.api'
 import AddPhoto from '@/shared/assests/icons/addPhoto.svg?react'
+import { Button } from '@/shared/ui/button'
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/shared/ui/dialog'
+
+import { Input } from '@/shared/ui/input'
 
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_FILE_SIZE = 10 * 1024 * 1024

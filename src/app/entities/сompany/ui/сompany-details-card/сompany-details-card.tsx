@@ -1,11 +1,10 @@
 import classes from './сompany-details-card.module.css'
 
-import { Button } from '@/components/ui/button'
-
 import { ICompany } from '@/shared/api/companies'
 import Pencel from '@/shared/assests/icons/pencil.svg?react'
 
 import { formatDate } from '@/shared/lib/format-date'
+import { Button } from '@/shared/ui/button'
 
 interface Iprops {
     company: ICompany

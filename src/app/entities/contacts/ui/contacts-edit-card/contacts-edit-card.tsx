@@ -3,12 +3,11 @@ import { toast } from 'react-toastify'
 
 import classes from './contacts-edit-card.module.css'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-
 import { contactsApi, IContact } from '@/shared/api/contacts'
 import Check from '@/shared/assests/icons/check.svg?react'
 import Cancel from '@/shared/assests/icons/close.svg?react'
+import { Button } from '@/shared/ui/button'
+import { Input } from '@/shared/ui/input'
 
 interface Iprops {
     data: IContact

@@ -3,13 +3,12 @@ import { toast } from 'react-toastify'
 
 import classes from './change-name-organozation.module.css'
 
-import { Button } from '@/components/ui/button'
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-
-import { Input } from '@/components/ui/input'
-
 import { companiesApi } from '@/shared/api/companies/companies.api'
 import Pencil from '@/shared/assests/icons/pencil.svg?react'
+import { Button } from '@/shared/ui/button'
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/shared/ui/dialog'
+
+import { Input } from '@/shared/ui/input'
 
 interface IProps {
     organizationId: string

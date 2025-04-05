@@ -3,7 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import classes from './logout.module.css'
 
-import { Button } from '@/components/ui/button'
+import SignOut from '@/shared/assests/icons/signOut.svg?react'
+import { ROUTES } from '@/shared/routes'
+import { Button } from '@/shared/ui/button'
 
 import {
     Dialog,
@@ -14,11 +16,7 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger
-} from '@/components/ui/dialog'
-
-import SignOut from '@/shared/assests/icons/signOut.svg?react'
-
-import { ROUTES } from '@/shared/routes'
+} from '@/shared/ui/dialog'
 
 export const Logout = () => {
     const navigate = useNavigate()

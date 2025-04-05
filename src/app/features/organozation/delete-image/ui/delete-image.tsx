@@ -2,10 +2,9 @@ import { toast } from 'react-toastify'
 
 import classes from './delete-image.module.css'
 
-import { Button } from '@/components/ui/button'
-
 import { companiesApi } from '@/shared/api/companies/companies.api'
 import Trash from '@/shared/assests/icons/trash.svg?react'
+import { Button } from '@/shared/ui/button'
 
 interface IProps {
     companyId: string

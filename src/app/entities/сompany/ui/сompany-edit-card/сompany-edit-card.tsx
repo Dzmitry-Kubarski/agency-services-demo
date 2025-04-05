@@ -3,16 +3,16 @@ import { toast } from 'react-toastify'
 
 import classes from './сompany-edit-card.module.css'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import MultiSelect from '@/components/ui/multi-select'
-
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-
 import { ICompany, ICompanyDTO, IContract, IContractDTO } from '@/shared/api/companies'
 import { companiesApi } from '@/shared/api/companies/companies.api'
 import Check from '@/shared/assests/icons/check.svg?react'
 import Cancel from '@/shared/assests/icons/close.svg?react'
+
+import { Button } from '@/shared/ui/button'
+import { Input } from '@/shared/ui/input'
+import MultiSelect from '@/shared/ui/multi-select'
+
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select'
 
 const BUSINESS_ENTITY = ['Sole Proprietorship', 'Partnership', 'Limited Liability Company']
 

@@ -1,9 +1,9 @@
 import classes from './contacts-card.module.css'
 
-import { Button } from '@/components/ui/button'
 import { IContact } from '@/shared/api/contacts'
 
 import Pencel from '@/shared/assests/icons/pencil.svg?react'
+import { Button } from '@/shared/ui/button'
 
 interface Iprops {
     data: IContact

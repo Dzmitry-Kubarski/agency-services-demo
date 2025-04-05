@@ -3,12 +3,12 @@
 import { Check, X } from 'lucide-react'
 import { useState } from 'react'
 
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Command, CommandList, CommandItem, CommandEmpty } from '@/components/ui/command'
-import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
+import { Badge } from './badge'
+import { Button } from './button'
 
 import ChevronDown from '@/shared/assests/icons/chevron-down.svg?react'
+import { Command, CommandList, CommandItem, CommandEmpty } from '@/shared/ui/command'
+import { Popover, PopoverTrigger, PopoverContent } from '@/shared/ui/popover'
 
 interface Option {
     value: string
