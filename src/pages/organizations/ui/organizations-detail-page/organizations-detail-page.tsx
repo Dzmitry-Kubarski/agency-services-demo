@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import classes from './organizations-detail-page.module.css'
 
-import { ChangeNameOrganozation, DeleteOrganozation } from '@/app/features'
+import { ChangeNameOrganozation, DeleteOrganozation } from '@/features'
 import { companiesApi } from '@/shared/api/companies/companies.api'
 import { contactsApi } from '@/shared/api/contacts'
 

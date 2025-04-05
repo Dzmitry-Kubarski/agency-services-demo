@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { ContactsEditCard, СontactsCard } from '@/app/entities/contacts'
+import { ContactsEditCard, СontactsCard } from '@/entities/contacts'
 
 import { IContact } from '@/shared/api/contacts'
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { CompanyDdetailsCard, CompanyEditCard } from '@/app/entities/сompany'
+import { CompanyDdetailsCard, CompanyEditCard } from '@/entities/сompany'
 import { ICompany } from '@/shared/api/companies'
 
 interface Iprops {

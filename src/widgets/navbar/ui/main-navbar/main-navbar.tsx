@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import classes from './main-navbar.module.css'
 
-import { Logout } from '@/app/features/auth'
+import { Logout } from '@/features/auth'
 import Briefcase from '@/shared/assests/icons/briefcase.svg?react'
 import Search from '@/shared/assests/icons/search.svg?react'
 import Settings from '@/shared/assests/icons/settings.svg?react'

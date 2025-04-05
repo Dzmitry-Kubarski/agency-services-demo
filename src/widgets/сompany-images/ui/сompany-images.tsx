@@ -1,6 +1,6 @@
 import classes from './сompany-images.module.css'
 
-import { AddCompanyImage, DeleteImage } from '@/app/features'
+import { AddCompanyImage, DeleteImage } from '@/features'
 
 import { ICompany } from '@/shared/api/companies'
 
